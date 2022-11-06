@@ -3,6 +3,8 @@
 ## Overview
 Graph Creator enables users to create info cards or simple graphs based on their data files in a web user interface.
 
+Case: Oura data
+
 ## Features
 - Create a user account
 - Log in and log out
