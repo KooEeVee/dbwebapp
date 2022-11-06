@@ -1,7 +1,7 @@
 # Graph Creator
 
 ## Overview
-Graph-o-matic enables users to create info cards or simple graphs based on their data files in a web user interface.
+Graph Creator enables users to create info cards or simple graphs based on their data files in a web user interface.
 
 ## Features
 - Create a user account
