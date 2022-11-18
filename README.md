@@ -17,10 +17,13 @@ Case: Oura data
 ## To-do
 Create a user account, log in and log out
 * users.py: register user (username, password), login, logout
+
 Upload a file
 * files.py: read file, inspect file and data, compare to the data rules (only numbers etc.), save validated data in a database, update data in the database
+
 Analyse data
 * analysis.py: select data from the database, operations for data analysis (date/time selection, calculate average), visualize data (draw a graph)
+
 Templates
 * index.html
 * login.html
@@ -29,16 +32,20 @@ Templates
 * dashboard.html
 * error.html
 * logout.html
+
 Database
 * db.py: database launch
 * schema.sql
+
 Routes and app
 * routes.py: functions for page requests
 * app.py: application launch
+
 Other files
 * .gitignore
 * .env
 * requirements.txt
+
 Layout
 * CSS?
 * Bootstrap?
