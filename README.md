@@ -16,7 +16,7 @@ Case: Oura data
 
 ## To-do
 Create a user account, log in and log out
-* users.py: register user (username, password), login, logout
+* users.py: register user (username, password), login, logout, session, hash password, username and password validation rules
 
 Upload a file
 * files.py: read file, inspect file and data, compare to the data rules (only numbers etc.), save validated data in a database, update data in the database
@@ -49,3 +49,6 @@ Other files
 Layout
 * CSS?
 * Bootstrap?
+
+Test Automation
+* Robot Framework?
