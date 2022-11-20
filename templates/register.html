@@ -1,6 +1,6 @@
 <h1>Register</h1>
 <form action="/register" method="POST">
-Username: <input type="text" name="username"> <br>
-Password: <input type="text" name="password"> <br>
+Username: <input type="text" name="username" minlength="3" maxlength="20" required="True"> <br>
+Password: <input type="text" name="password" minlength="8" maxlength="50" required="True"> <br>
 <input type="submit" value="Submit">
 </form>
