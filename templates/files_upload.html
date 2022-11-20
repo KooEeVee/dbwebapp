@@ -1,0 +1,11 @@
+<title>Files upload</title>
+<h1>Upload File</h1>
+<p>
+    Welcome {{username}}!
+</p>
+<form action = "/files_upload" method = "POST" enctype = "multipart/form-data" accept = ".csv">
+<input type = "file" name = "file"/>
+<input type = "submit" value = "Submit"/>
+</form>
+<a href="/dashboard">Check your dashboard</a> or <a href="/tools">Go to tools</a>
+<a href="/logout">Log out</a>

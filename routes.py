@@ -1,6 +1,8 @@
 from app import app
 import users
 from flask import render_template, redirect, request, session
+from werkzeug.utils import secure_filename
+import os
 
 @app.route("/")
 def index():
@@ -28,4 +30,36 @@ def login():
     if not users.login(username, password):
         return render_template("error.html", message="Username or password failed, try again")
     else:
-        return redirect("/")
+        return redirect("/dashboard")
+
+@app.route("/logout")
+def logout():
+    users.logout()
+    return render_template("logout.html")
+
+@app.route("/dashboard")
+def dashboard():
+    if "loggedin" in session:
+        return render_template("dashboard.html", username=session["username"])
+    else:
+        return redirect("/login")
+
+@app.route("/files_upload", methods=["GET", "POST"])
+def files_upload():
+    if "loggedin" in session:
+        if request.method == "GET":
+            return render_template("files_upload.html", username=session["username"])
+        if request.method == "POST":
+            uploaded_file = request.files["file"]
+            uploaded_filename = secure_filename(uploaded_file.filename)
+            uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], uploaded_filename))
+            return redirect("/dashboard")
+    else:
+        return redirect("/login")
+
+@app.route("/tools")
+def tools():
+    if "loggedin" in session:
+        return render_template("tools.html", username=session["username"])
+    else:
+        return redirect("/login")
