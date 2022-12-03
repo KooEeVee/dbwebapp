@@ -7,4 +7,3 @@ app.config["MAX_CONTENT_LENGTH"] = 1048576
 app.config["UPLOAD_PATH"] = "uploads"
 
 import routes
-

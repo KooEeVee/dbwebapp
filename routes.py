@@ -1,5 +1,6 @@
 from app import app
 import users
+import files
 from flask import render_template, redirect, request, session
 from werkzeug.utils import secure_filename
 import os
@@ -53,6 +54,7 @@ def files_upload():
             uploaded_file = request.files["file"]
             uploaded_filename = secure_filename(uploaded_file.filename)
             uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], uploaded_filename))
+            files.csv_data_to_postgresql()
             return redirect("/dashboard")
     else:
         return redirect("/login")
