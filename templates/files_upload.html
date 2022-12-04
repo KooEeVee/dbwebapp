@@ -1,11 +1,21 @@
 <title>Files upload</title>
 <h1>Upload File</h1>
 <p>
-    Welcome {{username}}!
+    Welcome to upload your data {{username}}!<br>
+    <br>
+    File requirements:
+    <ul>
+        <li>file type: .csv</li>
+        <li>headlines: yes</li>
+        <li>data type: numbers only</li>
+        <li>max size: 1 MB</li>
+    </ul>
 </p>
 <form action = "/files_upload" method = "POST" enctype = "multipart/form-data" accept = ".csv">
 <input type = "file" name = "file"/>
 <input type = "submit" value = "Submit"/>
 </form>
-<a href="/dashboard">Check your dashboard</a> or <a href="/tools">Go to tools</a>
+<a href="/dashboard">Check your dashboard</a><br>
+<a href="/files_update">Update a file</a><br>
+<a href="/tools">Go to tools</a><br>
 <a href="/logout">Log out</a>

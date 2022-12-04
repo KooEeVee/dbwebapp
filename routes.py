@@ -60,9 +60,24 @@ def files_upload():
     else:
         return redirect("/login")
 
-@app.route("/tools")
+@app.route("/files_update", methods=["GET", "POST"])
+def files_update():
+    if "loggedin" in session:
+        if request.method == "GET":
+            return render_template("files_update.html", username=session["username"])
+        if request.method == "POST":
+            uploaded_file = request.files["file"]
+            uploaded_filename = secure_filename(uploaded_file.filename)
+            uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], uploaded_filename))
+            files.csv_data_to_postgresql_replace(uploaded_filename, session["username"])
+            return redirect("/dashboard")
+    else:
+        return redirect("/login")
+
+@app.route("/tools", methods=["GET", "POST"])
 def tools():
     if "loggedin" in session:
-        return render_template("tools.html", username=session["username"])
+        if request.method == "GET":
+            return render_template("tools.html", username=session["username"])
     else:
         return redirect("/login")

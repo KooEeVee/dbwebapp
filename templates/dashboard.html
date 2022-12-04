@@ -3,8 +3,13 @@
 <p>
     Welcome {{username}}!<br>
     <br>
-    Uploaded files:
-        {{filenames}}
+    Uploaded files:<br>
+    {% for file in filenames %}
+    {{file}}<br>
+    {% endfor %}
+
 </p>
-<a href="/files_upload">Upload a file</a> or <a href="/tools">Go to tools</a>
+<a href="/files_upload">Upload a file</a><br>
+<a href="/files_update">Update a file</a><br>
+<a href="/tools">Go to tools</a><br>
 <a href="/logout">Log out</a>

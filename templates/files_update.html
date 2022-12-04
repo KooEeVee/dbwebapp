@@ -1,0 +1,26 @@
+<title>Files update</title>
+<h1>Update Files</h1>
+<p>
+    Wish to update your data {{username}}?<br>
+    <br>
+    Keep in mind the file requirements:
+    <ul>
+        <li>file type: .csv</li>
+        <li>headlines: yes</li>
+        <li>data type: numbers only</li>
+        <li>max size: 1 MB</li>
+        <li>update file must contain the same columns as the original file</li>
+        <li>update filename must be the same as the original file</li>
+    </ul>
+    <br>
+    <form action = "/files_update" method = "POST" enctype = "multipart/form-data" accept = ".csv">
+        Select your file:<br>
+        <input type = "file" name = "file"/>
+        <input type = "submit" value = "Submit"/>
+        </form>
+        <br>
+</p>
+<a href="/dashboard">Check your dashboard</a><br>
+<a href="/files_upload">Upload a file</a><br>
+<a href="/tools">Go to tools</a><br>
+<a href="/logout">Log out</a>
