@@ -19,7 +19,7 @@ Create a user account, log in and log out
 * [x]users.py: [x]register user (username, password), [x]login, [x]logout, [x]session, [x]hash password, [x]username and [x]password validation rules
 
 Upload a file
-* files.py: [x]upload file, file validation rules, read file, inspect file and data, compare to the data rules (only numbers etc.), save validated data in a database[x], update data in the database
+* files.py: [x]upload csv file, save csv data in a table[x], show uploaded files on the user dashboard[x], file validation rules, read file, inspect file and data, compare to the data rules (only numbers etc.), update data in the database
 
 Analyse data
 * analysis.py: select data from the database, operations for data analysis (date/time selection, calculate average), visualize data (draw a graph)

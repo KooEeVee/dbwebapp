@@ -41,7 +41,8 @@ def logout():
 @app.route("/dashboard")
 def dashboard():
     if "loggedin" in session:
-        return render_template("dashboard.html", username=session["username"])
+        filenames = files.get_uploaded_files(session["username"])
+        return render_template("dashboard.html", username=session["username"], filenames=filenames)
     else:
         return redirect("/login")
 
@@ -54,7 +55,7 @@ def files_upload():
             uploaded_file = request.files["file"]
             uploaded_filename = secure_filename(uploaded_file.filename)
             uploaded_file.save(os.path.join(app.config["UPLOAD_PATH"], uploaded_filename))
-            files.csv_data_to_postgresql()
+            files.csv_data_to_postgresql(uploaded_filename, session["username"])
             return redirect("/dashboard")
     else:
         return redirect("/login")
